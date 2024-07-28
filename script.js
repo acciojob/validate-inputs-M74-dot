@@ -1,18 +1,20 @@
-//your JS code here. If required.
-document.getElementById('myform').addEventListener('submit', function(event){
-	event.preventDefault();
-	
-	var name = document.getElementById('name').value;
-	var email = document.getElementById('email').value;
-	var phone = document.getElementById('phone').value;
+// define the patterns
+var namePattern = /^[A-Za-z]{3,}$/;
+var emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+var mobilePattern = /^[0-9]{10}$/;
 
-	var namePtr = /^[A-Za-z]{3,}$/;
-	var emailPtr = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-	var phonePtr = /^[0-9]{10}$/;
+// get the input fields
+var nameField = document.getElementById('name');
+var emailField = document.getElementById('email');
+var mobileField = document.getElementById('mobile');
 
-	document.getElementById('name').style.backgroundColor = namePtr.test(name) ? 'lightgreen' : 'pink';
-	document.getElementById('email').style.backgroundColor = emailPtr.test(email)? 'lightgreen':'pink';
-	document.getElementById('phone').style.backgroundColor = phonePtr.test(phone)?'lightgreen':'pink';
-	
-	
-});
+// set the oninput event for each field
+nameField.oninput = function() {
+    this.style.backgroundColor = namePattern.test(this.value) ? 'lightgreen' : 'pink';
+}
+emailField.oninput = function() {
+    this.style.backgroundColor = emailPattern.test(this.value) ? 'lightgreen' : 'pink';
+}
+mobileField.oninput = function() {
+    this.style.backgroundColor = mobilePattern.test(this.value) ? 'lightgreen' : 'pink';
+}
