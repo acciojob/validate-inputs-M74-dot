@@ -10,9 +10,9 @@ document.getElementById('myform').addEventListener('submit', function(event){
 	var emailPtr = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 	var phonePtr = /^[0-9]{10}$/;
 
-	document.getElementById('name').style.backgroundColor = namePtr.test(name) ? "lightgreen" : "pink";
-	document.getElementById('email').style.backgroundColor = emailPtr.test(email)? "lightgreen":"pink";
-	document.getElementById('phone').style.backgroundColor = phonePtr.test(phone)?"lightgreen":"pink";
+	document.getElementById('name').style.backgroundColor = namePtr.test(name) ? 'lightgreen' : 'pink';
+	document.getElementById('email').style.backgroundColor = emailPtr.test(email)? 'lightgreen':'pink';
+	document.getElementById('phone').style.backgroundColor = phonePtr.test(phone)?'lightgreen':'pink';
 	
 	
 });
